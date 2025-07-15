@@ -1,0 +1,49 @@
+{
+	"name": "kite-snippets-basic",
+	"version": "0.0.2",
+	"author": "lumozx",
+	"license": "MIT",
+	"displayName": "Kite Design Basic Snippets",
+	"description": "Kite Design Basic Snippets for VS Code",
+	"icon": "images/icon.png",
+	"homepage": "https://gitlab.timetask.cn/lumozx/kite-design-basic-snippets/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.timetask.cn/lumozx/kite-design-basic-snippets/"
+	},
+	"publisher": "lumozx",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"galleryBanner": {
+		"color": "#2b88fe",
+		"theme": "light"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1752434429624,
+		"size": 52229
+	}
+}

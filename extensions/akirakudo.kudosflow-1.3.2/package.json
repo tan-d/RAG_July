@@ -1,0 +1,368 @@
+{
+	"name": "kudosflow",
+	"displayName": "kudosflow - LangChain extension",
+	"description": "Use LangChain Nodes inside VSCode to enhance and automate your coding with AI-powered assistance",
+	"version": "1.3.2",
+	"publisher": "AkiraKudo",
+	"icon": "resources/chatbot.png",
+	"author": {
+		"name": "Akira Kudo",
+		"url": "https://www.linkedin.com/in/akira-kudo-4b04163/"
+	},
+	"bugs": {
+		"url": "https://github.com/akudo7/kudosflow/issues"
+	},
+	"repository": {
+		"url": "https://github.com/akudo7/kudosflow/blob/main/README.md"
+	},
+	"homepage": "https://github.com/akudo7/kudosflow/blob/main/README.md",
+	"engines": {
+		"vscode": "^1.96.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Other",
+		"Machine Learning",
+		"Notebooks"
+	],
+	"keywords": [
+		"chatgpt",
+		"gpt4",
+		"gpt4o",
+		"gpt4all",
+		"llama4",
+		"ollama",
+		"gemini",
+		"anthropic",
+		"claude",
+		"azure openai",
+		"openai",
+		"copilot",
+		"ai",
+		"refactor",
+		"bard",
+		"completion",
+		"assistants",
+		"javascript",
+		"typescript",
+		"python",
+		"web development",
+		"RAG",
+		"VectorDB",
+		"Qdrant",
+		"Weaviate",
+		"Flowise",
+		"Function Calling",
+		"Multi Chains",
+		"LangChain",
+		"LangGraph",
+		"LlamaIndex",
+		"Agent",
+		"ReAct",
+		"Multi Modals",
+		"devin",
+		"Bolt",
+		"Bolt.new",
+		"kudos-gpt"
+	],
+	"galleryBanner": {
+		"color": "#041621",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"l10n": "./l10n",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "%kudosflow.title%",
+			"properties": {
+				"kudosflow.command": {
+					"type": "string",
+					"default": "%kudosflow.configuration.command.default%",
+					"description": "%kudosflow.configuration.command.description%"
+				},
+				"kudosflow.argument": {
+					"type": "string",
+					"default": "%kudosflow.configuration.argument.default%",
+					"description": "%kudosflow.configuration.argument.description%"
+				},
+				"kudosflow.token": {
+					"type": "string",
+					"default": "%kudosflow.configuration.token.default%",
+					"description": "%kudosflow.configuration.token.description%"
+				},
+				"kudosflow.chatflow": {
+					"type": "string",
+					"default": "%kudosflow.configuration.chatflow.default%",
+					"description": "%kudosflow.configuration.chatflow.description%"
+				},
+				"kudosflow.temporaryFolder": {
+					"type": "string",
+					"default": "%kudosflow.temporaryFolder.default%",
+					"description": "%kudosflow.temporaryFolder.description%"
+				},
+				"kudosflow.CopilotServices": {
+					"type": "string",
+					"enum": [
+						"Ollama"
+					],
+					"default": "Ollama",
+					"description": "%kudosflow.CopilotServices.description%"
+				},
+				"kudosflow.CopilotHost": {
+					"type": "string",
+					"default": "http://127.0.0.1:11434",
+					"description": "%kudosflow.CopilotHost.description%"
+				},
+				"kudosflow.CopilotModel": {
+					"type": "string",
+					"default": "deepseek-coder:latest",
+					"description": "%kudosflow.CopilotModel.description%"
+				},
+				"kudosflow.CopilotFIM": {
+					"type": "string",
+					"enum": [
+						"starcoder",
+						"codellama"
+					],
+					"default": "starcoder",
+					"description": "%kudosflow.CopilotFIM.description%"
+				},
+				"kudosflow.CopilotOptions": {
+					"type": "object",
+					"default": {
+						"num_predict": 5,
+						"temperature": 0.7
+					},
+					"description": "%kudosflow.CopilotOptions.description%"
+				},
+				"kudosflow.messages": {
+					"type": "object",
+					"default": {
+						"progress": "%kudosflow.messages.progress%",
+						"terminal": "%kudosflow.messages.terminal%",
+						"asking": "%kudosflow.messages.asking%",
+						"askingImage": "%kudosflow.messages.askingImage%"
+					},
+					"description": "%kudosflow.messages.description%"
+				}
+			}
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "kudosflow",
+					"name": "RAG (kudosflow)",
+					"icon": "$(refresh)"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "kudosflow.creategraph",
+				"title": "%kudosflow.commands.creategraph.title%"
+			},
+			{
+				"command": "kudosflow.opengraph",
+				"title": "%kudosflow.commands.opengraph.title%"
+			},
+			{
+				"command": "kudosflow.savegraph",
+				"title": "%kudosflow.commands.savegraph.title%"
+			},
+			{
+				"command": "kudosflow.query",
+				"title": "%kudosflow.commands.query.title%"
+			},
+			{
+				"command": "kudosflow.refreshEntry",
+				"title": "Refresh",
+				"icon": ""
+			},
+			{
+				"command": "kudosflow.openFile",
+				"title": "Open File"
+			},
+			{
+				"command": "kudosflow.registerRAG",
+				"title": "Register to RAG"
+			},
+			{
+				"command": "kudosflow.unregisterRAG",
+				"title": "Unregister from RAG"
+			},
+			{
+				"command": "kudosflow.asking",
+				"title": "%kudosflow.commands.asking.title%",
+				"when": "false"
+			},
+			{
+				"command": "kudosflow.askingImage",
+				"title": "%kudosflow.commands.askingImage.title%",
+				"when": "false"
+			},
+			{
+				"command": "kudosflow.assistantsOnOff",
+				"title": "%kudosflow.commands.assistantsOnOff.title%"
+			},
+			{
+				"command": "kudosflow.sourceCompare",
+				"title": "%kudosflow.commands.sourceCompare.title%",
+				"when": "false"
+			},
+			{
+				"command": "kudosflow.terminal",
+				"title": "%kudosflow.commands.terminal.title%",
+				"when": "false"
+			},
+			{
+				"command": "kudosflow.deleteNote",
+				"title": "%kudosflow.commands.deleteNote.title%",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "kudosflow.jsonExporting",
+				"title": "%kudosflow.commands.jsonExporting.title%",
+				"icon": "$(save)"
+			},
+			{
+				"command": "kudosflow.devin",
+				"title": "%kudosflow.commands.devin.title%"
+			},
+			{
+				"command": "kudosflow.template",
+				"title": "%kudosflow.commands.template.title%",
+				"when": "false"
+			},
+			{
+				"command": "kudosflow.copilotOnOff",
+				"title": "%kudosflow.commands.copilotOnOff.title%"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "kudosflow.refreshEntry",
+					"when": "view == kudosflow",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "kudosflow.registerRAG",
+					"when": "view == kudosflow && viewItem == unregisteredFile"
+				},
+				{
+					"command": "kudosflow.unregisterRAG",
+					"when": "view == kudosflow && viewItem == registeredFile"
+				}
+			],
+			"comments/commentThread/context": [
+				{
+					"command": "kudosflow.template",
+					"group": "inline@5",
+					"when": "commentController == kudosflow && commentThreadIsEmpty"
+				},
+				{
+					"command": "kudosflow.terminal",
+					"group": "inline@3",
+					"when": "commentController == kudosflow && !commentThreadIsEmpty"
+				},
+				{
+					"command": "kudosflow.askingImage",
+					"group": "inline@2",
+					"when": "commentController == kudosflow"
+				},
+				{
+					"command": "kudosflow.asking",
+					"group": "inline@1",
+					"when": "commentController == kudosflow"
+				}
+			],
+			"comments/commentThread/title": [
+				{
+					"command": "kudosflow.deleteNote",
+					"group": "navigation@2",
+					"when": "commentController == kudosflow && !commentThreadIsEmpty"
+				},
+				{
+					"command": "kudosflow.jsonExporting",
+					"group": "navigation@1",
+					"when": "commentController == kudosflow && !commentThreadIsEmpty"
+				}
+			],
+			"comments/comment/title": [
+				{
+					"command": "kudosflow.sourceCompare",
+					"group": "group@1",
+					"when": "commentController == kudosflow"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"install:all": "yarn install && cd webview-ui && yarn install",
+		"start:webview": "cd webview-ui && yarn run start",
+		"build:webview": "cd webview-ui && yarn run build",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"obfuscate": "javascript-obfuscator out --output dist --config obfuscator.config.js",
+		"prepackage": "yarn run compile && mv dist out && yarn run build:webview && yarn run obfuscate",
+		"package": "yarn run clean && yarn run prepackage && vsce package",
+		"bundle": "webpack --mode production",
+		"pretest": "yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"clean": "rimraf dist out *.vsix",
+		"postinstall": "yarn install"
+	},
+	"devDependencies": {
+		"@types/jsonwebtoken": "^9.0.9",
+		"@types/mocha": "^10.0.9",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.96.0",
+		"@types/xml2js": "^0.4.14",
+		"@typescript-eslint/eslint-plugin": "^8.10.0",
+		"@typescript-eslint/parser": "^8.7.0",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.4.1",
+		"eslint": "^9.13.0",
+		"javascript-obfuscator": "^4.1.1",
+		"rimraf": "^6.0.1",
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.6.3",
+		"watch": "^1.0.2",
+		"webpack": "^5.99.2",
+		"webpack-cli": "^6.0.1",
+		"webpack-obfuscator": "^3.5.1"
+	},
+	"dependencies": {
+		"@langchain/anthropic": "^0.3.13",
+		"@langchain/community": "^0.3.36",
+		"@langchain/core": "^0.3.42",
+		"@langchain/ollama": "^0.2.0",
+		"@langchain/openai": "^0.4.5",
+		"@langchain/qdrant": "^0.1.1",
+		"@langchain/redis": "^0.1.0",
+		"@langchain/weaviate": "^0.1.1",
+		"@qdrant/js-client-rest": "^1.13.0",
+		"dotenv": "^16.4.7",
+		"graphql": "^16.10.0",
+		"ioredis": "^5.5.0",
+		"jsonwebtoken": "^9.0.2",
+		"langchain": "^0.3.15",
+		"pg": "^8.14.1",
+		"reflect-metadata": "^0.2.2",
+		"sharp": "^0.33.5",
+		"socket.io": "^4.8.1",
+		"typeorm": "^0.3.21",
+		"xml2js": "^0.6.2"
+	},
+	"__metadata": {
+		"installedTimestamp": 1752425187364,
+		"size": 81276119
+	}
+}

@@ -1,0 +1,439 @@
+{
+  "Avatar": {
+    "prefix": "kavatar",
+    "body": [
+      "<k-avatar",
+      "\tsize=\"${1|medium,small,large|}\"",
+      "\tshape=\"${2|circle,square|}\"",
+      "\t:isTooltip=\"${3|true,false|}\"",
+      "\t:userInfo=\"${4}\"",
+      "/>"
+    ],
+    "description": "kite design avatar"
+  },
+  "Badge": {
+    "prefix": "kbadge",
+    "body": ["<k-badge :count=\"$1\">", "\t${8}", "</k-badge>"],
+    "description": "kite design badge"
+  },
+  "Breadcrumb": {
+    "prefix": "kbreadcrumb",
+    "body": [
+      "<k-breadcrumb separator=\"${1:/}\">",
+      "\t<k-breadcrumb-item :to=\"{ path: '$2', name: '$3' }\">$4</k-breadcrumb-item>",
+      "\t<k-breadcrumb-item :to=\"{ path: '$5', name: '$6' }\">$7</k-breadcrumb-item>",
+      "</k-breadcrumb>"
+    ],
+    "description": "kite design breadcrumb"
+  },
+  "Breadcrumb Item": {
+    "prefix": "kbreadcrumbitem",
+    "body": [
+      "<k-breadcrumb-item :to=\"{ path: '$1', name: '$2' }\">$3</k-breadcrumb-item>"
+    ],
+    "description": "kite design breadcrumb item"
+  },
+  "Button": {
+    "prefix": "kbutton",
+    "body": [
+      "<k-button shape=\"${1|normal,circle,character,square,oval|}\" size=\"${2|medium,large,small|}\" @click=\"${3}\">$4</k-button>"
+    ],
+    "description": "kite design button"
+  },
+  "Button Group": {
+    "prefix": "kbuttongroup",
+    "body": [
+      "<k-button-group>",
+      "\t<k-button shape=\"${1|normal,circle,character,square,oval|}\" size=\"${2|medium,large,small|}\" @click=\"${3}\">$4</k-button>",
+      "\t<k-button shape=\"${5|primary,text,info,success,warning,danger|}\" size=\"${2|medium,large,small|}\" @click=\"$6\">${7}</k-button>",
+      "</k-button-group>"
+    ],
+    "description": "kite design button group"
+  },
+  "Checkbox": {
+    "prefix": "kcheckbox",
+    "body": [
+      "<k-checkbox v-model=\"${1}\" :indeterminate=\"${2|false,true|}\" @change=\"${3}\">$4</k-checkbox>"
+    ],
+    "description": "kite design checkbox"
+  },
+  "Checkbox Group": {
+    "prefix": "kcheckboxgroup",
+    "body": [
+      "<k-checkbox-group v-model=\"$1\" @change=\"${2}\">",
+      "\t<k-checkbox v-for=\"${3:item} in ${4:items}\" :key=\"${3:item}.${5:key}\" :label=\"${3:item}.${6:label}\">",
+      "\t\t{{${3:item}.${7:label}}}",
+      "\t</k-checkbox>",
+      "</k-checkbox-group>"
+    ],
+    "description": "kite design checkbox group"
+  },
+  "Circle": {
+    "prefix": "kcircle",
+    "body": ["<k-circle :percent=\"$1\">", "$2", "</k-circle>"],
+    "description": "kite design circle"
+  },
+  "Confirm Panel": {
+    "prefix": "kconfirmpanel",
+    "body": [
+      "<k-confirm-panel",
+      "\ttitle=\"$1\"",
+      "\tinputName=\"$2\"",
+      "\tinputVal=\"$3\"",
+      "\t@confirm=\"$4\"",
+      "\t@cancel=\"$5\">",
+      "</k-confirm-panel>"
+    ],
+    "description": "kite design confirm panel"
+  },
+  "Confirm Panel With Select": {
+    "prefix": "kconfirmpanelselect",
+    "body": [
+      "<k-confirm-panel",
+      "\ttitle=\"$1\"",
+      "\tinputName=\"$2\"",
+      "\tinputVal=\"$3\"",
+      "\t:with-select-option=\"true\"",
+      "\tselect-title=\"$4\"",
+      "\t:select-options=\"$5\"",
+      "\tselect-value=\"$6\"",
+      "\t@confirm=\"$7\"",
+      "\t@cancel=\"$8\">",
+      "</k-confirm-panel>"
+    ],
+    "description": "kite design confirm panel with select"
+  },
+  "Drawer": {
+    "prefix": "kdrawer",
+    "body": [
+      "<k-drawer",
+      "\ttitle=\"$1\"",
+      "\t:closable=\"${2|true,false|}\"",
+      "\tv-model=\"${3}\"",
+      "\t:mask=\"${4|true,false|}\"",
+      "\t:isClickOutsideClose=\"${5|false,true|}\">",
+      "\t${6}",
+      "\t</k-drawer>"
+    ],
+    "description": "kite design drawer"
+  },
+  "Form": {
+    "prefix": "kform",
+    "body": [
+      " <k-form",
+      "\tref=\"$1\"",
+      "\t:model=\"$2\"",
+      "\t:rules=\"$3\"",
+      "\t@validate=\"$4\">",
+      "\t$5",
+      "</k-form>"
+    ],
+    "description": "kite design form"
+  },
+  "Form Item": {
+    "prefix": "kformitem",
+    "body": [
+      "<k-form-item",
+      "\tlabel=\"$1\"",
+      "\tprop=\"$2\"",
+      "\t:hasFeedback=\"${3|true,false|}\">",
+      "\t$4",
+      "</k-form-item>"
+    ],
+    "description": "kite design form item"
+  },
+  "Col": {
+    "prefix": "kcol",
+    "body": ["<k-col :span=\"${1}\" :offset=\"${2:0}\">${3}</k-col>"],
+    "description": "kite design col"
+  },
+  "Row": {
+    "prefix": "krow",
+    "body": [
+      "<k-row :gutter=\"${1:20}\">",
+      "\t<k-col :span=\"${2:12}\" :offset=\"${3:0}\">${4}</k-col>",
+      "\t<k-col :span=\"${5:12}\" :offset=\"${6:0}\">${7}</k-col>",
+      "</k-row>"
+    ],
+    "description": "kite design row"
+  },
+  "Icon": {
+    "prefix": "kicon",
+    "body": ["<k-icon name=\"$1\" width=\"$2\"/>"]
+  },
+  "Input Number": {
+    "prefix": "kinputnumber",
+    "body": [
+      "<k-input-number v-model=\"$1\" :min=\"${2:1}\" :max=\"${3:10}\" :step=\"${4:1}\" :precision=\"${5|null,0,1,2|}\"",
+      "\t:showControl=\"${6|true,false|}\" placeholder=\"$7\" @change=\"$8\">",
+      "</k-input-number>"
+    ],
+    "description": "kite design input number"
+  },
+  "Input": {
+    "prefix": "kinput",
+    "body": [
+      "<k-input v-model=\"$1\" placeholder=\"$2\" :showCleanButton=\"${3|false,true|}\" @change=\"$4\">$5</k-input>"
+    ],
+    "description": "kite design input"
+  },
+  "Loading": {
+    "prefix": "kloading",
+    "body": [
+      "<k-loading",
+      "\tv-model=\"$1\"",
+      "\t:size=\"${2:10}\"",
+      "\t:isMask=\"${3|true,false|}\">",
+      "/<k-loading>"
+    ],
+    "description": "kite design loading"
+  },
+  "Message": {
+    "prefix": "kmessage",
+    "body": [
+      "this.\\$message({",
+      "\tmessage: '$1',",
+      "\ttype: '${2|info,success,warning,error|}',",
+      "\tposition: ${3|bottom-right,top-center,top-right,bottom-center|},",
+      "\tduration: ${4:3000},",
+      "});"
+    ],
+    "description": "kite design message"
+  },
+  "Mini Progress": {
+    "prefix": "kminiprogress",
+    "body": [
+      "<k-mini-progress v-model=\"$1\" :width=\"$2\"></k-mini-progress>"
+    ],
+    "description": "kite design mini progress"
+  },
+  "Modal": {
+    "prefix": "kmodal",
+    "body": [
+      "<k-modal v-model=\"$1\" title=\"$2\" size=\"${3|medium,small,large|}\" width=\"${4:620}\"  @on-close=\"$5\">",
+      "\t$6",
+      "</k-modal>"
+    ],
+    "description": "kite design modal"
+  },
+  "Notification": {
+    "prefix": "knotification",
+    "body": [
+      "this.\\$notification({",
+      "\ttitle: '${1:title}',",
+      "\tmessage: '${2:message}',",
+      "\ttype: '${3|info,success,warning,error|}',",
+      "\tduration: '${4|4500, 0|}',",
+      "\tposition: '${5|top-right,top-left,bottom-right,bottom-left|}',",
+      "\tshowClose: '${6:true}',",
+      "});"
+    ],
+    "description": "kite design notification"
+  },
+
+  "Notification with type": {
+    "prefix": "knotificationtype",
+    "body": [
+      "this.\\$notification.${1|info,success,warning,error|}({",
+      "\ttitle: '${2:title}',",
+      "\tmessage: '${3:message}',",
+      "\tduration: '${4|4500, 0|}',",
+      "\tposition: '${5|top-right,top-left,bottom-right,bottom-left|}',",
+      "\tshowClose: '${6:true}',",
+      "});"
+    ],
+    "description": "kite design notification with type"
+  },
+  "Page": {
+    "prefix": "kpage",
+    "body": [
+      "<k-page :is-small=\"${1|false,true|}\" :total=\"${2:100}\" show-total show-elevator show-sizer></k-page>"
+    ],
+    "description": "kite design page"
+  },
+  "Popover": {
+    "prefix": "kpopover",
+    "body": [
+      "<k-popover",
+      "\tplacement=\"${1|top,top-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end|}\"",
+      "\ttitle=\"$2\"",
+      "\ttrigger=\"${3|click,hover,manual|}\"",
+      "\tcontent=\"$4\"",
+      "\tv-model=\"$5\"",
+      "\t:ref=\"$6\">",
+      "\t$7",
+      "</k-popover>"
+    ],
+    "description": "kite design popover"
+  },
+  "Preview Picture": {
+    "prefix": "kpreviewpicture",
+    "body": [
+      "this.\\$previewPicture({",
+      "\tisNeedReloadFunc: '${1|true,false|}',",
+      "\tmulti: '${2|false,true|}',",
+      "\tfirstImageId: '${3:1}',",
+      "\timages: '$4',",
+      "});"
+    ],
+    "description": "kite design preview picture"
+  },
+  "Progress": {
+    "prefix": "kprogress",
+    "body": [
+      "<k-progress",
+      "\tv-model=\"$1\"",
+      "\tthumbShape=\"${2|circle,heart|}\"",
+      "\t:width=\"${3:256}\"",
+      "\t:height=\"${4:8}\"",
+      "\t:max=\"${5:10}\"",
+      "\t:thumbDiameter=\"${6:21}\"",
+      "\t:isShowProgressBtn=\"${7|true,false|}\"",
+      "\t:isShowProgressTxtPercent=\"${8|true,false|}\"",
+      "\tinnerBarColor=\"$9\"",
+      "></k-progress>"
+    ],
+    "description": "kite design progress"
+  },
+  "Radio": {
+    "prefix": "kradio",
+    "body": [
+      "<k-radio v-model=\"${1}\" :label=\"${2}\" cancelAble @on-change=\"${3}\">${4}</k-radio>"
+    ],
+    "description": "kite design radio"
+  },
+  "Radio Group": {
+    "prefix": "kradiogroup",
+    "body": [
+      "<k-radio-group v-model=\"$1\" @change=\"$2\">",
+      "\t<k-radio v-for=\"${3:item} in ${4:items}\" :key=\"${3:item}.${5:key}\" :label=\"${3:item}.${6:label}\">",
+      "\t\t{{${3:item}.${7:title}}}",
+      "\t</k-radio>",
+      "</k-radio-group>"
+    ],
+    "description": "kite design radio group"
+  },
+  "Select Panel": {
+    "prefix": "kselectpanel",
+    "body": [
+      "<k-select-panel",
+      "\tref=\"$1\"",
+      "\t:select-options=\"$2\"",
+      "\t@click=\"$3\"",
+      "\t:showEmptyPage=\"${4|true,false|}\">",
+      "</k-select-panel>"
+    ],
+    "description": "kite design select panel"
+  },
+  "Select": {
+    "prefix": "kselect",
+    "body": [
+      "<k-select",
+      "\t:select-options=\"$1\"",
+      "\tv-model=\"$2\">",
+      "</k-select>"
+    ],
+    "description": "kite design select"
+  },
+  "Star": {
+    "prefix": "kstar",
+    "body": [
+      "<k-star",
+      "\tv-model=\"$1\"",
+      "\t:max-length=\"${2:5}\"",
+      "\t@hover-value=\"$3\"",
+      "\t@leave=\"$4\"",
+      "\t@move=\"$5\"",
+      "\t:disabled=\"${6|false,true|}\"",
+      "\t:half=\"${7|false,true|}\">",
+      "</k-star>"
+    ],
+    "description": "kite design star"
+  },
+  "TablePro": {
+    "prefix": "ktable",
+    "body": [
+      "<k-table-pro",
+      "\t:border=\"${1|true,false|}\"",
+      "\tthead-background-color=\"$2\"",
+      "\t:pagination=\"$3\"",
+      "\t@on-page-number-change=\"$4\"",
+      "\t:columns=\"$5\"",
+      "\t:data=\"$6\">",
+      "</k-table-pro>"
+    ],
+    "description": "kite design table"
+  },
+  "Tab": {
+    "prefix": "ktabs",
+    "body": [
+      "<k-tabs v-model=\"$1\" @on-tab-click=\"${2}\" :tab-position=\"${3|top,right,bottom,left|}\" >",
+      "\t<k-tab-pane v-for=\"${4:item} in ${5:items}\" :key=\"${4:item}.${6:key}\" :label=\"${4:item}.${7:label}\" :name=\"${4:item}.${8:name}\" >",
+      "\t\t{{${4:item}.${9:label}}}",
+      "\t</k-tab-pane>",
+      "</k-tabs>"
+    ],
+    "description": "kite design tabs"
+  },
+  "Tag": {
+    "prefix": "ktag",
+    "body": ["<k-tag color=\"$1\" :isIntaglio=\"${2|true,false|}\">$3</k-tag>"],
+    "description": "kite design tag"
+  },
+  "TextArea": {
+    "prefix": "ktextare",
+    "body": [
+      "<k-text-area",
+      "\tv-model=\"$1\"",
+      "\t:rows=\"${2:3}\"",
+      "\tautosize",
+      "\t:canResize=\"${3|true,false|}\"",
+      "\t:autoFocus=\"${4|true,false|}\"",
+      "\t:customStyle=\"$5\">",
+      "</k-text-area>"
+    ],
+    "description": "kite design textarea"
+  },
+  "Time Select": {
+    "prefix": "ktimeselect",
+    "body": [
+      "<k-time-select initTime=\"${1}\" @selected=\"${2}\"></k-time-select>"
+    ],
+    "description": "kite design time Select"
+  },
+  "Toggle": {
+    "prefix": "ktoggle",
+    "body": ["<k-toggle v-model=\"$1\" @toggle=\"$2\"></k-toggle>"],
+    "description": "kite design toggle"
+  },
+  "Tooltip": {
+    "prefix": "ktootip",
+    "body": [
+      "<k-tooltip content=\"$1\" placement=\"${2|top,top-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end|}\">",
+      "\t${4}",
+      "</k-tooltip>"
+    ],
+    "description": "kite design tooltip"
+  },
+  "Tree": {
+    "prefix": "ktree",
+    "body": [
+      "<k-tree",
+      "\tref=\"$1\"",
+      "\t:data=\"$2\"",
+      "\tchildrenKey=\"${3:childrenList}\"",
+      "\thasChildKey=\"${4:hasChild}\"",
+      "\t:isSelectRowExpand=\"${5|true,false|}\"",
+      "\t:mountFields=\"$6\"",
+      "\t:canExpand=\"${7|true,false|}\"",
+      "\t:enableDragMove=\"${8|false,tree|}\"",
+      "\t:dragOptions=\"$9\"",
+      "\t:coverDefaultDragOption=\"${10|false,true|}\"",
+      "\t:enableDropOnFolder=\"${11|true,false|}\"",
+      "\t@on-toggle-expanded=\"$12\">",
+      "$13",
+      "</k-tree>"
+    ],
+    "description": "kite design tree"
+  }
+}

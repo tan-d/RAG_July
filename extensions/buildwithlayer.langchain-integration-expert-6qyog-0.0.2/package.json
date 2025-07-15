@@ -1,0 +1,83 @@
+{
+	"icon": "./icon.png",
+	"engines": {
+		"vscode": "^1.97.0"
+	},
+	"categories": [
+		"AI",
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/extension.js",
+	"extensionDependencies": [
+		"github.copilot-chat"
+	],
+	"contributes": {
+		"chatParticipants": [
+			{
+				"isSticky": true,
+				"id": "langchain-integration-expert-6Qyog",
+				"name": "langchain",
+				"fullName": "Langchain Javascript",
+				"description": "Ask me anything about Langchain!"
+			}
+		],
+		"walkthroughs": [
+			{
+				"steps": [
+					{
+						"media": {
+							"image": "./media/participant-tutorial.gif",
+							"altText": "Copilot Participant Tutorial"
+						},
+						"id": "langchain-integration-expert-6Qyog.copilotInstructionWalkthroughStep",
+						"title": "Using the Langchain Javascript Copilot Participant",
+						"description": "You can activate the Langchain Javascript Copilot Participant by @ mentioning the participant in a Copilot message (e.g., **``@langchain``** Your question)."
+					}
+				],
+				"id": "langchain-integration-expert-6Qyog.walkthrough",
+				"title": "Getting started with Langchain Javascript",
+				"description": "This walkthrough will guide you through the features of Langchain Javascript."
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "npm run check-types && node esbuild.js",
+		"check-types": "npx tsc --noEmit",
+		"watch": "npm-run-all -p watch:*",
+		"watch:esbuild": "node esbuild.js --watch",
+		"watch:tsc": "npx tsc --noEmit --watch --project tsconfig.json",
+		"package": "npm run check-types && node esbuild.js --production",
+		"compile-tests": "npx tsc -p . --outDir out",
+		"watch-tests": "npx tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "npx eslint src --ext ts",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.97.0",
+		"@types/mocha": "^10.0.6",
+		"@types/node": "18.x",
+		"@typescript-eslint/eslint-plugin": "^7.4.0",
+		"@typescript-eslint/parser": "^7.4.0",
+		"eslint": "^8.57.0",
+		"ts-loader": "^9.5.1",
+		"@vscode/test-cli": "^0.0.8",
+		"@vscode/test-electron": "^2.3.9",
+		"esbuild": "^0.25.0",
+		"typescript": "~5.7.2"
+	},
+	"dependencies": {},
+	"name": "langchain-integration-expert-6Qyog",
+	"displayName": "Langchain Javascript",
+	"publisher": "buildwithlayer",
+	"description": "Github Copilot Extension for Langchain Javascript",
+	"version": "0.0.2",
+	"__metadata": {
+		"installedTimestamp": 1752425102257,
+		"size": 25171
+	}
+}

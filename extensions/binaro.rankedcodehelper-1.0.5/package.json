@@ -1,0 +1,97 @@
+{
+	"name": "rankedcodehelper",
+	"displayName": "OpenAI Wizard",
+	"description": "Simple AI Helper to help you make changes in your code using powerfull artificial inteligence of OpenAIs chat GPT.",
+	"version": "1.0.5",
+	"publisher": "binaro",
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"keywords": [
+		"ai",
+		"openai",
+		"programming assitant",
+		"development assitant",
+		"ai assitant",
+		"chat GPT"
+	],
+	"categories": [
+		"Other",
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onCommand:rankedcodehelper.rankedcodehelper",
+		"onCommand:rankedcodehelper.rankedreplaceselection",
+		"onCommand:rankedcodehelper.rankednew",
+		"onCommand:rankedcodehelper.setapikey"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "rankedcodehelper.rankedreplaceselection",
+				"title": "OpenAI Wizard"
+			},
+			{
+				"command": "rankedcodehelper.rankedcodehelper",
+				"title": "OpenAI Wizard File"
+			},
+			{
+				"command": "rankedcodehelper.rankednew",
+				"title": "OpenAI Wizard New"
+			},
+			{
+				"command": "rankedcodehelper.setapikey",
+				"title": "OpenAI Wizard Set api key"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "rankedcodehelper.rankedreplaceselection"
+				}
+			]
+		},
+		"configuration": {
+			"title": "OpenAI Wizard",
+			"properties": {
+				"rankedcodehelper.afterPromptAction": {
+					"type": "string",
+					"default": "",
+					"description": "Action performed after every prompt (for example linting)."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.73.0",
+		"@vscode/test-electron": "^2.2.0",
+		"eslint": "^8.28.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.1.0",
+		"typescript": "^4.9.3"
+	},
+	"dependencies": {
+		"keytar": "^7.9.0",
+		"markdown-it": "^13.0.1",
+		"openai": "^3.1.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/jiric-micro-projects/open-ai-wizard"
+	},
+	"__metadata": {
+		"installedTimestamp": 1752425044364,
+		"size": 6535863
+	}
+}

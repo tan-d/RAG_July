@@ -1,0 +1,42 @@
+{
+	"name": "openai-debugger",
+	"displayName": "OpenAI Debugger",
+	"description": "Extend the VS Code debugger using OpenAI to automatically add breakpoints based on a prompt.",
+	"version": "1.0.3",
+	"publisher": "flashboss",
+	"icon": "vige.png",
+	"engines": {
+		"vscode": "^1.78.0"
+	},
+	"activationEvents": [
+		"onCommand:openaiDebugger.addBreakpoints"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"watch": "tsc --watch"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.78.0",
+		"typescript": "^4.9.5"
+	},
+	"dependencies": {
+		"axios": "^1.7.9"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "openaiDebugger.addBreakpoints",
+				"title": "OpenAI Debugger: Add Breakpoint"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/flashboss/openai-debugger.git"
+	},
+	"__metadata": {
+		"installedTimestamp": 1752425024558,
+		"size": 2591530
+	}
+}
